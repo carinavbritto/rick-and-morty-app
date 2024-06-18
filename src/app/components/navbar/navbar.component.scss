@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid var(--black-200);
+    border: 0.125rem solid var(--black-200);
     padding: 0.5rem;
     font-weight: 600;
     height: 2.75rem;
@@ -19,35 +19,37 @@
 
     .label {
       margin: 0;
-      font-size: 14px;
+      font-size: 0.875rem; // 14px
       font-weight: 600;
-      line-height: 14px;
+      line-height: 0.875rem;
       text-align: center;
     }
 
     .badge {
-      border: 2px solid var(--black-200);
+      border: 0.125rem solid var(--black-200);
       background-color: var(--white);
       color: var(--black-100);
       padding: 0 0.35rem;
       margin-left: 0.25rem;
       border-radius: 100%;
-      font-size: 0.875rem;
+      font-size: 0.875rem; // 14px
       font-weight: 700;
+      line-height: 0.875rem;
     }
 
     &:hover {
       opacity: 0.7;
 
       .badge {
-        border: 2px solid var(--black-200);
+        border: 0.125rem solid var(--black-200);
         background-color: var(--black-100);
         color: var(--white);
         padding: 0 0.35rem;
         margin-left: 0.25rem;
         border-radius: 100%;
-        font-size: 0.875rem;
+        font-size: 0.875rem; // 14px
         font-weight: 700;
+        line-height: 0.875rem;
       }
     }
 
@@ -57,14 +59,15 @@
       border-radius: 0.5rem 0 0 0.5rem;
 
       .badge {
-        border: 2px solid var(--black-200);
+        border: 0.125rem solid var(--black-200);
         background-color: var(--white);
         color: var(--black-100);
         padding: 0 0.35rem;
         margin-left: 0.25rem;
         border-radius: 100%;
-        font-size: 0.875rem;
+        font-size: 0.875rem; // 14px
         font-weight: 700;
+        line-height: 0.875rem;
       }
     }
   }
