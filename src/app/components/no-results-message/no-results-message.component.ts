@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './no-results-message.component.html',
-  styleUrl: './no-results-message.component.sass'
+  styleUrl: './no-results-message.component.scss',
 })
-export class NoResultsMessageComponent {
-
-}
+export class NoResultsMessageComponent {}

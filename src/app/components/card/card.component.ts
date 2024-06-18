@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule, NoResultsMessageComponent],
   templateUrl: './card.component.html',
-  styleUrl: './card.component.sass',
+  styleUrl: './card.component.scss',
 })
 export class CardComponent {
   @Input() characters$: Observable<Character[]> = of([]);
