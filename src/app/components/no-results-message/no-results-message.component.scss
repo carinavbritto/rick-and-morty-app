@@ -2,10 +2,11 @@
   background-color: var(--black-100);
   border: 1px solid var(--black-300);
   border-radius: 1.25rem;
-  width: 100%;
+  min-width: 720px;
+  min-height: 511px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 10px;
 

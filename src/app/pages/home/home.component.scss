@@ -1,44 +1,12 @@
 .home-component {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-  h1 {
-    margin: 0;
-  }
-}
-
-.search-area {
-  display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.card-component {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-
-  .card-div {
+  .search-area {
     display: flex;
-    flex-direction: column;
-  }
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.5rem;
 
-  .card-header {
-    position: relative;
-
-    .card-image {}
-
-    .favorite-button {
-      position: absolute;
-      top: 2rem;
-      right: 1rem;
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
+    .title {
+      display: inline;
     }
   }
 }
