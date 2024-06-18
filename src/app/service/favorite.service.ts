@@ -26,4 +26,12 @@ export class FavoriteService {
       this.favorites.splice(index, 1);
     }
   }
+
+  getFavoriteCharacters(): Character[] {
+    return this.favorites;
+  }
+
+  isFavorite(character: Character): boolean {
+    return this.favorites.some((fav) => fav.id === character.id);
+  }
 }
