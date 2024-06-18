@@ -1,10 +1,16 @@
 <nav class="navbar-component">
-  <a routerLink="/" routerLinkActive="active" class="link">
-    <img src="icons/home.svg" width="24" height="24" class="icon" />
+  <a
+    routerLink="/"
+    routerLinkActive="active"
+    class="link"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <app-home-icon class="icon" />
     <p class="label">Início</p>
   </a>
   <a routerLink="/favorites" routerLinkActive="active" class="link">
-    <img src="icons/heart.svg" width="24" height="24" class="icon" />
+    <app-heart-icon class="icon" />
+
     <p class="label">Favoritos</p>
     <span class="counter">{{ getFavoritesCount() }}</span>
   </a>
