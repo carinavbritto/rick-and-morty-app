@@ -1,7 +1,10 @@
 <div class="home-component">
-  <div class="search-area-component">
+  <div class="search-area">
     <h1 class="title title-system-green">Início</h1>
-    <app-search-bar (searchInput)="onSearch($event)"></app-search-bar>
+    <app-search-bar
+      (searchInput)="onSearch($event)"
+      class="search-bar"
+    ></app-search-bar>
   </div>
 
   <app-card

@@ -1,6 +1,6 @@
 .no-results-message {
-  background-color: var(--black-100);
-  border: 0.0625rem solid var(--black-300);
+  background-color: var(--black-400);
+  border: 0.0625rem solid var(--black-200);
   border-radius: 1.25rem;
   min-width: 45rem;
   min-height: 31.9375rem;
@@ -22,14 +22,14 @@
     font-size: 1.125rem; // 18px
     font-weight: 400;
     line-height: 1.125rem;
-    color: var(--gray-300);
+    color: var(--gray-400);
   }
 
-  .back-link {
+  .link {
     font-size: 0.875rem; // 14px
     font-weight: 600;
     line-height: 0.875rem;
-    color: var(--black-100);
+    color: var(--black-400);
     background-color: var(--white);
     border-radius: 0.9375rem;
     padding: 0.625rem 1.5625rem;

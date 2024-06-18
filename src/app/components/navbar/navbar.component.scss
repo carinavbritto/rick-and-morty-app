@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 0.125rem solid var(--black-200);
+    border: 0.125rem solid var(--black-300);
     padding: 0.5rem;
     font-weight: 600;
     height: 2.75rem;
@@ -25,63 +25,49 @@
       text-align: center;
     }
 
-    .badge {
-      border: 0.125rem solid var(--black-200);
+    .counter {
+      border: 0.0625rem solid var(--black-300);
       background-color: var(--white);
-      color: var(--black-100);
-      padding: 0 0.35rem;
+      color: var(--black-400);
       margin-left: 0.25rem;
       border-radius: 100%;
       font-size: 0.875rem; // 14px
       font-weight: 700;
       line-height: 0.875rem;
+      height: 1.25rem;
+      width: 1.25rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     &:hover {
       opacity: 0.7;
-
-      .badge {
-        border: 0.125rem solid var(--black-200);
-        background-color: var(--black-100);
-        color: var(--white);
-        padding: 0 0.35rem;
-        margin-left: 0.25rem;
-        border-radius: 100%;
-        font-size: 0.875rem; // 14px
-        font-weight: 700;
-        line-height: 0.875rem;
-      }
     }
 
     &:active {
       background-color: var(--white);
-      color: var(--black-100);
+      color: var(--black-400);
       border-radius: 0.5rem 0 0 0.5rem;
 
-      .badge {
-        border: 0.125rem solid var(--black-200);
+      .counter {
+        border-color: var(--black-300);
         background-color: var(--white);
-        color: var(--black-100);
-        padding: 0 0.35rem;
-        margin-left: 0.25rem;
-        border-radius: 100%;
-        font-size: 0.875rem; // 14px
-        font-weight: 700;
-        line-height: 0.875rem;
+        color: var(--black-400);
       }
     }
   }
 
   .link:nth-child(1) {
     background-color: var(--white);
-    color: var(--black-100);
+    color: var(--black-400);
     border-radius: 0.5rem 0 0 0.5rem;
   }
 
   .link:nth-child(2) {
-    background-color: var(--black-100);
+    background-color: var(--black-400);
     border-left: none;
-    color: var(--gray-300);
+    color: var(--gray-400);
     border-radius: 0 0.5rem 0.5rem 0;
   }
 }

@@ -26,14 +26,22 @@
     </div>
   </div>
   <ng-template #noResults>
-    <app-no-results-message></app-no-results-message>
+    <app-no-results-message
+      title="Nada foi encontrado"
+      description="Tente realizar uma nova busca."
+      [showLink]="false"
+    ></app-no-results-message>
   </ng-template>
 </div>
 <ng-template #loadingOrNoResults>
   <div class="loading-or-no-results">
     <div *ngIf="loading" class="loading">Carregando...</div>
     <div *ngIf="!loading && noResultsFound" class="no-results-message">
-      <app-no-results-message></app-no-results-message>
+      <app-no-results-message
+        title="Nada foi encontrado"
+        description="Tente realizar uma nova busca."
+        [showLink]="false"
+      ></app-no-results-message>
     </div>
   </div>
 </ng-template>

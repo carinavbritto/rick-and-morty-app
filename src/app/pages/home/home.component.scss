@@ -1,12 +1,12 @@
 .home-component {
   .search-area {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.75rem;
 
     .title {
-      display: inline;
+      margin-bottom: 0;
     }
   }
 }

@@ -1,7 +1,7 @@
 <div class="no-results-message">
-  <h3 class="title">Nada foi encontrado</h3>
-  <p class="description">Tente realizar uma nova busca.</p>
-  <a routerLink="/" routerLinkActive="active" class="back-link">
+  <h3 class="title">{{ title }}</h3>
+  <p class="description">{{ description }}</p>
+  <a *ngIf="showLink" routerLink="/" routerLinkActive="active" class="link">
     Voltar ao início
   </a>
 </div>
