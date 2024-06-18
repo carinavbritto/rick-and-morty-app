@@ -1,7 +1,10 @@
 <div class="search-bar-component">
   <input
+    required
+    autocomplete="off"
+    id="search"
     class="app-search-bar__input"
     (input)="onSearch($event)"
-    placeholder="Pesquisar"
   />
+  <label for="search" title="Pesquisar" data-title="Pesquisar"></label>
 </div>
