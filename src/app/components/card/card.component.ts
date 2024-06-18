@@ -3,10 +3,11 @@ import { Character } from '../../interfaces/character.interface';
 import { Observable, of } from 'rxjs';
 import { NoResultsMessageComponent } from '../no-results-message/no-results-message.component';
 import { CommonModule } from '@angular/common';
+import { HeartOutlineIconComponent } from '../heart-outline-icon/heart-outline-icon.component';
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [CommonModule, NoResultsMessageComponent],
+  imports: [CommonModule, NoResultsMessageComponent, HeartOutlineIconComponent],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
 })
