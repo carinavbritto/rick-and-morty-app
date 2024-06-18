@@ -16,4 +16,9 @@ export class RickAndMortyService {
       `${this.baseUrl}/${endpoint}`,
     );
   }
+
+  searchCharacterByName(name: string): Observable<{ results: Character[] }> {
+    const url = `${this.baseUrl}/character/?name=${name}`;
+    return this.http.get<{ results: Character[] }>(url);
+  }
 }

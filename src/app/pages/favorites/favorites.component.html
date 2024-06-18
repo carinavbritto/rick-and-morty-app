@@ -1,3 +1,28 @@
 <div class="favorites-component">
   <h1>Favoritos</h1>
+  <div class="card-component">
+    <div class="card-div" *ngFor="let character of favorites">
+      <div class="card-header">
+        <img
+          src="{{ character.image }}"
+          alt="Imagem do Card"
+          class="card-image"
+        />
+        <button class="favorite-button" (click)="toggleFavorite(character)">
+          Excluir favorito
+        </button>
+      </div>
+      <ul class="card-body">
+        <li class="card-title">
+          {{ character.name }}
+        </li>
+        <li class="card-description">
+          {{ character.species }}
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="favorites.length === 0" class="no-results-message">
+      Nenhum personagem favorito.
+    </div>
+  </div>
 </div>

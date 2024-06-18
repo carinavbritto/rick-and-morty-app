@@ -1,29 +1,48 @@
 <div class="home-component">
   <div class="search-area-component">
     <h1>Início</h1>
-    <app-search-bar />
+    <app-search-bar (searchInput)="onSearch($event)"></app-search-bar>
   </div>
 
   <div class="card-component">
-    <div class="card-div" *ngFor="let character of characters">
-      <div class="card-header">
-        <img
-          src="{{ character.image }}"
-          alt="Imagem do Card"
-          class="card-image"
-        />
-        <button class="favorite-button">
-          <img src="icons/heart--outline.svg" alt="Imagem do Card" />
-        </button>
+    <div *ngIf="characters$ | async as characters; else loadingOrNoResults">
+      <div *ngIf="characters.length > 0; else noResults">
+        <div class="card-div" *ngFor="let character of characters">
+          <div class="card-header">
+            <img
+              src="{{ character.image }}"
+              alt="Imagem do Card"
+              class="card-image"
+            />
+            <button class="favorite-button" (click)="toggleFavorite(character)">
+              <img
+                src="icons/heart--outline.svg"
+                alt="Imagem do Card"
+                [class.favorite]="isFavorite(character)"
+              />
+            </button>
+          </div>
+          <ul class="card-body">
+            <li class="card-title">
+              {{ character.name }}
+            </li>
+            <li class="card-description">
+              {{ character.species }}
+            </li>
+          </ul>
+        </div>
       </div>
-      <ul class="card-body">
-        <li class="card-title">
-          {{ character.name }}
-        </li>
-        <li class="card-description">
-          {{ character.species }}
-        </li>
-      </ul>
+      <ng-template #noResults>
+        <div class="no-results-message">Nenhum personagem encontrado.</div>
+      </ng-template>
     </div>
+    <ng-template #loadingOrNoResults>
+      <div class="loading-or-no-results">
+        <div *ngIf="loading" class="loading">Carregando...</div>
+        <div *ngIf="!loading && noResultsFound" class="no-results-message">
+          Nenhum personagem encontrado.
+        </div>
+      </div>
+    </ng-template>
   </div>
 </div>
