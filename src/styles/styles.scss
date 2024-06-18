@@ -21,16 +21,33 @@ a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
 h1 {
-  font-family: var(--font-family-system);
   font-size: 48px;
   font-weight: 400;
   line-height: 48px;
   letter-spacing: -0.02em;
   text-align: left;
-  color: #56C596;
-  text-shadow: (-2px) (-2px) 0 #B2DF28,
-    2px (-2px) 0 #B2DF28,
-    (-2px) 2px 0 #B2DF28,
-    2px 2px 0 #B2DF28
+}
+
+.title-system {
+  font-family: var(--font-family-system);
+  color: var(--gray-100);
+}
+
+.title-system-green {
+  font-family: var(--font-family-system);
+  color: var(--green-200);
+  text-shadow: (-2px) (-2px) 0 var(--green-100),
+    2px (-2px) 0 var(--green-100),
+    (-2px) 2px 0 var(--green-100),
+    2px 2px 0 var(--green-100)
 }
