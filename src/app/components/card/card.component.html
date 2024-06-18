@@ -8,7 +8,11 @@
           class="card-image"
         />
         <button class="favorite-button" (click)="onToggleFavorite(character)">
-          <app-heart-icon class="icon" />
+          <img
+            src="icons/heart--outline.svg"
+            alt="Imagem do Card"
+            [class.favorite]="checkIsFavorite(character)"
+          />
         </button>
       </div>
       <ul class="card-body">
