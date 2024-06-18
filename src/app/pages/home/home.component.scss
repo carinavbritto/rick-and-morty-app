@@ -1,7 +1,16 @@
-.home-component {}
+.home-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    margin: 0;
+  }
+}
 
 .search-area {
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
   align-items: center;
 }
@@ -27,6 +36,9 @@
       position: absolute;
       top: 2rem;
       right: 1rem;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
     }
   }
 }

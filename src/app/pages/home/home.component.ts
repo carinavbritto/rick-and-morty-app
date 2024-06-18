@@ -15,11 +15,19 @@ import { Character } from '../../interfaces/character.interface';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
+import { NoResultsMessageComponent } from '../../components/no-results-message/no-results-message.component';
+import { CardComponent } from '../../components/card/card.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, FormsModule, SearchBarComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    SearchBarComponent,
+    NoResultsMessageComponent,
+    CardComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
