@@ -16,6 +16,7 @@ export class CardComponent {
   @Input() noResultsFound: boolean = false;
   @Output() toggleFavorite = new EventEmitter<Character>();
   @Output() isFavorite = new EventEmitter<Character>();
+
   onToggleFavorite(character: Character) {
     this.toggleFavorite.emit(character);
   }
