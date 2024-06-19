@@ -38,4 +38,35 @@
       opacity: 0.7;
     }
   }
+
+  @media (max-width: 768px) {
+    min-width: 80vw;
+    min-height: 20rem;
+    padding: 1rem;
+
+    .title {
+      font-size: 1.25rem;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    min-width: 90vw;
+    min-height: 15rem;
+
+    .title {
+      font-size: 1rem;
+    }
+
+    .description {
+      font-size: 0.875rem;
+    }
+
+    .link {
+      padding: 0.5rem 1rem;
+    }
+  }
 }
