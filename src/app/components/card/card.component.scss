@@ -1,8 +1,23 @@
 .card-component {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(auto-fill, minmax(14rem, auto));
+  grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
   grid-gap: 1.875rem;
+
+  @media (min-width: var(--breakpoint-lg)) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (min-width: var(--breakpoint-md)) and (max-width: calc(var(--breakpoint-lg) - 1px)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: var(--breakpoint-sm)) and (max-width: calc(var(--breakpoint-md) - 1px)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: calc(var(--breakpoint-sm) - 1px)) {
+    grid-template-columns: 1fr;
+  }
 
   .card-div {
     border: 0.0625rem solid var(--black-200);
