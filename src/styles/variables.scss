@@ -18,4 +18,10 @@
   // Tipografia
   --font-family-sans: "Poppins", sans-serif;
   --font-family-system: "Creepster", system-ui;
+
+  // Breakpoints
+  --breakpoint-xs: 576px; // Extra small devices (portrait phones)
+  --breakpoint-sm: 768px; // Small devices (landscape phones)
+  --breakpoint-md: 992px; // Medium devices (tablets)
+  --breakpoint-lg: 1200px; // Large devices (desktops)
 }
