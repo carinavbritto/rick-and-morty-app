@@ -8,11 +8,11 @@ import { Component, Input, SimpleChanges } from '@angular/core';
   styleUrl: './home-icon.component.scss',
 })
 export class HomeIconComponent {
-  @Input() width: string = '24';
-  @Input() height: string = '24';
+  @Input() width: string = '30';
+  @Input() height: string = '30';
   @Input() fill: string = '#A4A4A4';
 
-  viewBox: string = '0 0 24 24';
+  viewBox: string = '0 0 30 30';
 
   ngOnChanges(changes: SimpleChanges) {
     this.updateViewBox();

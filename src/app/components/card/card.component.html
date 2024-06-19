@@ -8,11 +8,17 @@
           class="card-image"
         />
         <button class="favorite-button" (click)="onToggleFavorite(character)">
-          <img
-            src="icons/heart--outline.svg"
-            alt="Imagem do Card"
-            [class.favorite]="checkIsFavorite(character)"
-          />
+          <app-heart-outline-icon
+            *ngIf="!isFavorite(character)"
+            width="30"
+            height="30"
+          ></app-heart-outline-icon>
+          <app-heart-icon
+            *ngIf="isFavorite(character)"
+            width="30"
+            height="30"
+            fill="#000000"
+          ></app-heart-icon>
         </button>
       </div>
       <ul class="card-body">
@@ -38,9 +44,9 @@
     <div *ngIf="loading" class="loading">Carregando...</div>
     <div *ngIf="!loading && noResultsFound" class="no-results-message">
       <app-no-results-message
-        title="Nada foi encontrado"
-        description="Tente realizar uma nova busca."
-        [showLink]="false"
+        title="Parece que você ainda não tem favoritos"
+        description="Volte à página inicial e escolha os melhores para você."
+        [showLink]="true"
       ></app-no-results-message>
     </div>
   </div>

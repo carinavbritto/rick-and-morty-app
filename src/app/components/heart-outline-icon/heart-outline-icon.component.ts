@@ -5,13 +5,14 @@ import { Component, Input, SimpleChanges } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './heart-outline-icon.component.html',
-  styleUrl: './heart-outline-icon.component.sass',
+  styleUrl: './heart-outline-icon.component.scss',
 })
 export class HeartOutlineIconComponent {
-  @Input() width: string = '20';
-  @Input() height: string = '18';
+  @Input() width: string = '30';
+  @Input() height: string = '30';
   @Input() fill: string = '#FAFAFA';
-  viewBox: string = '0 0 20 18';
+
+  viewBox: string = '0 0 30 30';
 
   ngOnChanges(changes: SimpleChanges) {
     this.updateViewBox();
