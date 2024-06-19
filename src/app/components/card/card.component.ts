@@ -1,6 +1,13 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { Character } from '../../interfaces/character.interface';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { NoResultsMessageComponent } from '../no-results-message/no-results-message.component';
 import { CommonModule } from '@angular/common';
 import { HeartOutlineIconComponent } from '../heart-outline-icon/heart-outline-icon.component';
@@ -25,6 +32,12 @@ export class CardComponent {
   @Input() noResultsDescription: string = '';
   @Input() showLink: boolean = false;
   @Output() toggleFavorite = new EventEmitter<Character>();
+  @Output() loadMore = new EventEmitter<void>();
+
+  @ViewChild('loadMoreTrigger') loadMoreTrigger: ElementRef | null = null;
+
+  private intersectionObserver?: IntersectionObserver;
+  private destroy$ = new Subject<void>();
 
   favorites: Set<string> = new Set();
 
@@ -40,5 +53,27 @@ export class CardComponent {
 
   isFavorite(character: Character): boolean {
     return this.favorites.has(character.id.toString());
+  }
+
+  ngAfterViewInit() {
+    this.setupIntersectionObserver();
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
+    this.intersectionObserver?.disconnect();
+  }
+
+  private setupIntersectionObserver() {
+    this.intersectionObserver = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        this.loadMore.emit();
+      }
+    });
+
+    if (this.loadMoreTrigger) {
+      this.intersectionObserver.observe(this.loadMoreTrigger.nativeElement);
+    }
   }
 }
