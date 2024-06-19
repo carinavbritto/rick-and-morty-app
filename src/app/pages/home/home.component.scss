@@ -5,44 +5,30 @@
     align-items: center;
     margin-bottom: 3.75rem;
 
+    @media (min-width: 1440px) {
+      // Large Desktops/Screens
+      margin-bottom: 5rem;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1439px) {
+      // Smaller Desktops/Tablets (Landscape)
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      // Tablet (Portrait)
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 767px) {
+      // Mobile Phones
+      flex-direction: column;
+      margin-bottom: 1.5rem;
+    }
+
     .title {
       margin-bottom: 0;
-    }
-  }
-
-  @media (max-width: var(--breakpoint-sm)) {
-    .home-component {
-      margin: 0 1.25rem;
-    }
-
-    .search-area {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 3.75rem;
-
-      .title {
-        margin-bottom: 0;
-      }
-    }
-  }
-
-  @media (min-width: var(--breakpoint-sm)) and (max-width: var(--breakpoint-md)) {
-    .home-component {
-      margin: 0 1.875rem;
-    }
-
-    .search-area {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 3.75rem;
-
-      .title {
-        margin-bottom: 0;
-      }
     }
   }
 }

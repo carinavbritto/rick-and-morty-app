@@ -4,22 +4,22 @@
   grid-gap: 1.875rem;
 
   @media (min-width: 1440px) {
-    // Desktop (>= 1440px)
+    // Large Desktops/Screens
     grid-template-columns: repeat(4, 1fr);
   }
 
   @media (min-width: 1024px) and (max-width: 1439px) {
-    // Tablet (Landscape) (1024px - 1439px)
+    // Smaller Desktops/Tablets (Landscape)
     grid-template-columns: repeat(3, 1fr);
   }
 
   @media (min-width: 768px) and (max-width: 1023px) {
-    // Tablet (Portrait) (768px - 1023px)
+    // Tablet (Portrait)
     grid-template-columns: repeat(2, 1fr);
   }
 
   @media (max-width: 767px) {
-    // Mobile (<= 767px)
+    // Mobile Phones
     grid-template-columns: 1fr;
   }
 
