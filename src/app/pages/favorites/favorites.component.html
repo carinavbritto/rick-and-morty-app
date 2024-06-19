@@ -2,6 +2,11 @@
   <h1 class="title title-system-green">Favoritos</h1>
   <app-card
     [characters$]="characters$"
+    [loading]="loading"
+    [noResultsFound]="(characters$ | async)?.length === 0"
+    noResultsTitle="Parece que você ainda não tem favoritos"
+    noResultsDescription="Volte à página inicial e escolha os melhores para você."
+    [showLink]="true"
     (toggleFavorite)="toggleFavorite($event)"
   ></app-card>
 </div>

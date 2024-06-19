@@ -21,6 +21,9 @@ export class CardComponent {
   @Input() characters$: Observable<Character[]> = of([]);
   @Input() loading: boolean = false;
   @Input() noResultsFound: boolean = false;
+  @Input() noResultsTitle: string = '';
+  @Input() noResultsDescription: string = '';
+  @Input() showLink: boolean = false;
   @Output() toggleFavorite = new EventEmitter<Character>();
 
   favorites: Set<string> = new Set();

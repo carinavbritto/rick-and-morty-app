@@ -20,6 +20,8 @@ import { CardComponent } from '../../components/card/card.component';
   styleUrls: ['./favorites.component.scss'],
 })
 export class FavoritesComponent {
+  loading: boolean = false;
+
   constructor(private favoriteService: FavoriteService) {}
 
   get characters$(): Observable<Character[]> {

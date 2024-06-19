@@ -33,9 +33,9 @@
   </div>
   <ng-template #noResults>
     <app-no-results-message
-      title="Nada foi encontrado"
-      description="Tente realizar uma nova busca."
-      [showLink]="false"
+      [title]="noResultsTitle"
+      [description]="noResultsDescription"
+      [showLink]="showLink"
     ></app-no-results-message>
   </ng-template>
 </div>
@@ -44,9 +44,9 @@
     <div *ngIf="loading" class="loading">Carregando...</div>
     <div *ngIf="!loading && noResultsFound" class="no-results-message">
       <app-no-results-message
-        title="Parece que você ainda não tem favoritos"
-        description="Volte à página inicial e escolha os melhores para você."
-        [showLink]="true"
+        [title]="noResultsTitle"
+        [description]="noResultsDescription"
+        [showLink]="showLink"
       ></app-no-results-message>
     </div>
   </div>
