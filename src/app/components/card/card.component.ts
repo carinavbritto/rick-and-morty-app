@@ -12,6 +12,7 @@ import { NoResultsMessageComponent } from '../no-results-message/no-results-mess
 import { CommonModule } from '@angular/common';
 import { HeartOutlineIconComponent } from '../heart-outline-icon/heart-outline-icon.component';
 import { HeartIconComponent } from '../heart-icon/heart-icon.component';
+import { BinIconComponent } from '../bin-icon/bin-icon.component';
 @Component({
   selector: 'app-card',
   standalone: true,
@@ -20,6 +21,7 @@ import { HeartIconComponent } from '../heart-icon/heart-icon.component';
     NoResultsMessageComponent,
     HeartOutlineIconComponent,
     HeartIconComponent,
+    BinIconComponent,
   ],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
@@ -31,6 +33,7 @@ export class CardComponent {
   @Input() noResultsTitle: string = '';
   @Input() noResultsDescription: string = '';
   @Input() showLink: boolean = false;
+  @Input() isFavoritesPage: boolean = false;
   @Output() toggleFavorite = new EventEmitter<Character>();
   @Output() loadMore = new EventEmitter<void>();
 

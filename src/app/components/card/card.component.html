@@ -8,17 +8,22 @@
           class="card-image"
         />
         <button class="favorite-button" (click)="onToggleFavorite(character)">
-          <app-heart-outline-icon
-            *ngIf="!isFavorite(character)"
-            width="30"
-            height="30"
-          ></app-heart-outline-icon>
-          <app-heart-icon
-            *ngIf="isFavorite(character)"
-            width="30"
-            height="30"
-            fill="#000000"
-          ></app-heart-icon>
+          <ng-container *ngIf="isFavoritesPage">
+            <app-bin-icon fill="#000000"></app-bin-icon>
+          </ng-container>
+          <ng-container *ngIf="!isFavoritesPage">
+            <app-heart-outline-icon
+              *ngIf="!isFavorite(character)"
+              width="30"
+              height="30"
+            ></app-heart-outline-icon>
+            <app-heart-icon
+              *ngIf="isFavorite(character)"
+              width="30"
+              height="30"
+              fill="#000000"
+            ></app-heart-icon>
+          </ng-container>
         </button>
       </div>
       <ul class="card-body">
