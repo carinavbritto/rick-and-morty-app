@@ -5,11 +5,17 @@
       routerLinkActive="active"
       class="link"
       [routerLinkActiveOptions]="{ exact: true }"
+      aria-label="Página Inicial"
     >
       <app-home-icon class="icon" width="24" height="24" />
       <p class="label">Início</p>
     </a>
-    <a routerLink="/favorites" routerLinkActive="active" class="link">
+    <a
+      routerLink="/favorites"
+      routerLinkActive="active"
+      class="link"
+      aria-label="Página de Favoritos"
+    >
       <app-heart-icon class="icon" />
 
       <p class="label">Favoritos</p>
@@ -22,10 +28,16 @@
       routerLinkActive="active"
       class="link"
       [routerLinkActiveOptions]="{ exact: true }"
+      aria-label="Página Inicial"
     >
       <app-home-icon class="icon" width="24" height="24" />
     </a>
-    <a routerLink="/favorites" routerLinkActive="active" class="link">
+    <a
+      routerLink="/favorites"
+      routerLinkActive="active"
+      class="link"
+      aria-label="Página de Favoritos"
+    >
       <app-heart-icon class="icon" />
       <span class="counter">{{ getFavoritesCount() }}</span>
     </a>
