@@ -1,17 +1,33 @@
 <nav class="navbar-component">
-  <a
-    routerLink="/"
-    routerLinkActive="active"
-    class="link"
-    [routerLinkActiveOptions]="{ exact: true }"
-  >
-    <app-home-icon class="icon" width="24" height="24" />
-    <p class="label">Início</p>
-  </a>
-  <a routerLink="/favorites" routerLinkActive="active" class="link">
-    <app-heart-icon class="icon" />
+  <div class="desktop">
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      class="link"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <app-home-icon class="icon" width="24" height="24" />
+      <p class="label">Início</p>
+    </a>
+    <a routerLink="/favorites" routerLinkActive="active" class="link">
+      <app-heart-icon class="icon" />
 
-    <p class="label">Favoritos</p>
-    <span class="counter">{{ getFavoritesCount() }}</span>
-  </a>
+      <p class="label">Favoritos</p>
+      <span class="counter">{{ getFavoritesCount() }}</span>
+    </a>
+  </div>
+  <div class="mobile">
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      class="link"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <app-home-icon class="icon" width="24" height="24" />
+    </a>
+    <a routerLink="/favorites" routerLinkActive="active" class="link">
+      <app-heart-icon class="icon" />
+      <span class="counter">{{ getFavoritesCount() }}</span>
+    </a>
+  </div>
 </nav>

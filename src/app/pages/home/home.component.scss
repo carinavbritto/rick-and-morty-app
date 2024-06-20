@@ -1,34 +1,50 @@
 .home-component {
+  width: 100%;
+
   .search-area {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 3.75rem;
-
-    @media (min-width: 1440px) {
-      // Large Desktops/Screens
-      margin-bottom: 5rem;
-    }
-
-    @media (min-width: 1024px) and (max-width: 1439px) {
-      // Smaller Desktops/Tablets (Landscape)
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    @media (min-width: 768px) and (max-width: 1023px) {
-      // Tablet (Portrait)
-      margin-bottom: 2rem;
-    }
-
-    @media (max-width: 767px) {
-      // Mobile Phones
-      flex-direction: column;
-      margin-bottom: 1.5rem;
-    }
 
     .title {
       margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: 1440px) {
+
+    // Large Desktops/Screens
+    .search-area {
+      margin-bottom: 5rem;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1439px) {
+
+    // Smaller Desktops/Tablets (Landscape)
+    .search-area {
+      margin-bottom: 3.75rem;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+
+    // Tablet (Portrait)
+    .search-area {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+
+    // Mobile Phones
+    .search-area {
+      flex-direction: column;
+      align-items: stretch;
+      margin-bottom: 1.5rem;
+      padding: 0 1rem;
+      gap: 2rem;
     }
   }
 }

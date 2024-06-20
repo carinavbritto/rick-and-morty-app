@@ -2,26 +2,26 @@
   background-color: var(--black-400);
   border: 0.0625rem solid var(--black-200);
   border-radius: 1.25rem;
-  min-width: 45rem;
-  min-height: 31.9375rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 45rem;
+  min-height: 31.9375rem;
   gap: 1.25rem;
 
   .title {
     font-size: 1.5rem; // 24px
-    font-weight: 700;
     line-height: 1.5rem;
+    font-weight: 700;
     color: var(--gray-100);
     margin-bottom: 0;
   }
 
   .description {
     font-size: 1.125rem; // 18px
-    font-weight: 400;
     line-height: 1.125rem;
+    font-weight: 400;
     color: var(--gray-400);
   }
 
@@ -39,34 +39,75 @@
     }
   }
 
-  @media (max-width: 768px) {
-    min-width: 80vw;
-    min-height: 20rem;
-    padding: 1rem;
+  @media (min-width: 1024px) and (max-width: 1439px) {
+    // Smaller Desktops/Tablets (Landscape)
+    min-width: 45rem;
+    min-height: 31.9375rem;
 
     .title {
-      font-size: 1.25rem;
+      font-size: 1.5rem; // 24px
+      line-height: 1.5rem;
     }
 
     .description {
-      font-size: 1rem;
+      font-size: 1.125rem; // 18px
+      line-height: 1.125rem;
     }
   }
 
-  @media (max-width: 480px) {
-    min-width: 90vw;
-    min-height: 15rem;
+  @media (min-width: 768px) and (max-width: 1023px) {
+    // Tablets (Portrait)
+    min-width: 25rem;
+    min-height: 18rem;
 
     .title {
-      font-size: 1rem;
+      font-size: 1rem; // 16px
+      line-height: 1rem;
     }
 
     .description {
-      font-size: 0.875rem;
+      font-size: 0.875rem; // 14px
+      line-height: 0.875rem;
     }
 
     .link {
+      font-size: 0.75rem; // 12px
+      line-height: 0.75rem;
       padding: 0.5rem 1rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    // Mobile Phones
+    min-width: 25rem;
+    min-height: 18rem;
+
+    .title {
+      font-size: 1rem; // 16px
+      line-height: 1rem;
+    }
+
+    .description {
+      font-size: 0.875rem; // 14px
+      line-height: 0.875rem;
+    }
+
+    .link {
+      font-size: 0.75rem; // 12px
+      line-height: 0.75rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  @media (max-width: 320px) {
+    // Mobile Phones
+    min-width: 10rem;
+    min-height: 18rem;
+    padding: 1rem;
+    text-align: center;
+
+    .title {
+      text-align: center;
     }
   }
 }

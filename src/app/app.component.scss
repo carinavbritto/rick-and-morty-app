@@ -1,11 +1,24 @@
 .app-component {
   height: 100%;
   min-height: 100vh;
-  padding: 3.75rem 2rem;
+  padding: 3.75rem 15rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch;
   background-color: var(--black-300);
-  gap: 2.5rem;
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    padding: 3.75rem 10rem;
+  }
+
+  @media (max-width: 767px) {
+    align-items: stretch;
+    padding: 2rem;
+  }
+
+  @media (max-width: 320px) {
+    padding: 1rem;
+  }
+
 }

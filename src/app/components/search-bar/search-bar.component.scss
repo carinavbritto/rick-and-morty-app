@@ -52,4 +52,38 @@
       color: var(--gray-400) //blue
     }
   }
+
+  @media (min-width: 1024px) and (max-width: 1439px) {
+    input {
+      width: 18rem;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    // Tablets
+
+    input {
+      width: 15rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+
+    // Mobile
+    input {
+      width: 100%;
+    }
+
+    label::before {
+      top: 0.9375rem;
+      left: 14.4px;
+      font-size: 1rem; // 16px
+    }
+
+    .label-before {
+      font-size: 12px; // 12px
+      left: 0.3rem;
+    }
+  }
 }
