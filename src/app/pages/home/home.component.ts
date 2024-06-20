@@ -57,25 +57,16 @@ export class HomeComponent implements OnInit {
           return this.rickAndMortyService
             .searchCharacterByName(searchTerm)
             .pipe(
-              catchError((error) => {
-                console.error('Erro ao buscar personagens:', error);
-                return of({ results: [] } as { results: Character[] });
-              }),
+              catchError(() => of([])), // Tratar erro de forma a retornar um array vazio
               tap(() => (this.noResultsFound = false)),
-              tap((data) => (this.noResultsFound = data.results.length === 0)),
-              switchMap((data) => {
-                this.filteredCharacters$.next(data.results);
-                return of(data.results);
-              }),
+              tap((data) => (this.noResultsFound = data.length === 0)),
+              tap((data) => this.filteredCharacters$.next(data)),
+              switchMap(() => this.filteredCharacters$),
             );
         }
       }),
       finalize(() => (this.loading = false)),
     );
-
-    this.characters$.subscribe();
-
-    this.filteredCharacters$.next([]);
   }
 
   onSearch(searchTerm: string): void {
@@ -97,13 +88,9 @@ export class HomeComponent implements OnInit {
   }
 
   private fetchCharacters(): Observable<Character[]> {
-    return this.rickAndMortyService.getApiData('character').pipe(
-      catchError((error) => {
-        console.error('Erro ao buscar personagens:', error);
-        return of({ results: [] } as { results: Character[] });
-      }),
-      map((data) => data.results),
+    return this.rickAndMortyService.getAllCharacters().pipe(
       tap((results) => this.filteredCharacters$.next(results)),
+      catchError(() => of([])), // Tratar erro de forma a retornar um array vazio
     );
   }
 }

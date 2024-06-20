@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { forkJoin, Observable, of } from 'rxjs';
+import { map, switchMap, catchError } from 'rxjs/operators';
 import { Character } from '../interfaces/character.interface';
 
 @Injectable({
@@ -11,14 +12,40 @@ export class RickAndMortyService {
 
   constructor(private http: HttpClient) {}
 
-  getApiData(endpoint: string): Observable<{ results: Character[] }> {
-    return this.http.get<{ results: Character[] }>(
-      `${this.baseUrl}/${endpoint}`,
+  private getApiData(
+    endpoint: string,
+    page: number = 1,
+  ): Observable<{ results: Character[]; info: any }> {
+    return this.http.get<{ results: Character[]; info: any }>(
+      `${this.baseUrl}/${endpoint}?page=${page}`,
     );
   }
 
-  searchCharacterByName(name: string): Observable<{ results: Character[] }> {
+  getAllCharacters(): Observable<Character[]> {
+    return this.getApiData('character').pipe(
+      switchMap((firstPage) => {
+        const totalPages = firstPage.info.pages;
+        const requests: Observable<Character[]>[] = [of(firstPage.results)];
+
+        for (let page = 2; page <= totalPages; page++) {
+          requests.push(
+            this.getApiData('character', page).pipe(map((res) => res.results)),
+          );
+        }
+
+        return forkJoin(requests).pipe(
+          map((resultsArray) => resultsArray.flat()),
+        );
+      }),
+      catchError(() => of([])), // Handle errors gracefully
+    );
+  }
+
+  searchCharacterByName(name: string): Observable<Character[]> {
     const url = `${this.baseUrl}/character/?name=${name}`;
-    return this.http.get<{ results: Character[] }>(url);
+    return this.http.get<{ results: Character[] }>(url).pipe(
+      map((response) => response.results),
+      catchError(() => of([])), // Handle errors gracefully
+    );
   }
 }
