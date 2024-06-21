@@ -8,12 +8,22 @@
   </div>
 
   <app-card
-    [characters$]="characters$"
+    [characters$]="filteredCharacters$"
     [loading]="loading"
-    [noResultsFound]="noResultsFound"
+    [noResultsFound]="
+      noResultsFound && filteredCharacters$.getValue().length === 0
+    "
     noResultsTitle="Nada foi encontrado"
     noResultsDescription="Tente realizar uma nova busca."
     [showLink]="false"
     (toggleFavorite)="toggleFavorite($event)"
+    (loadMore)="loadMore()"
   ></app-card>
+
+  <div
+    *ngIf="loading && filteredCharacters$.getValue().length > 0"
+    class="loading"
+  >
+    Carregando mais personagens...
+  </div>
 </div>

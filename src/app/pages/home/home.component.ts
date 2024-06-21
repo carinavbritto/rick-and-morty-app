@@ -10,7 +10,7 @@ import {
   finalize,
   map,
 } from 'rxjs/operators';
-import { of, Observable, BehaviorSubject } from 'rxjs';
+import { of, Observable, BehaviorSubject, EMPTY } from 'rxjs';
 import { Character } from '../../interfaces/character.interface';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit {
   searchInput$ = new BehaviorSubject<string>('');
   loading: boolean = false;
   noResultsFound: boolean = false;
+  currentPage: number = 1;
 
   constructor(
     private rickAndMortyService: RickAndMortyService,
@@ -46,27 +47,56 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.characters$ = this.searchInput$.pipe(
-      debounceTime(300),
-      distinctUntilChanged(),
-      tap(() => (this.loading = true)),
-      switchMap((searchTerm: string) => {
-        if (searchTerm.trim() === '') {
-          return this.fetchCharacters();
-        } else {
-          return this.rickAndMortyService
-            .searchCharacterByName(searchTerm)
-            .pipe(
-              catchError(() => of([])), // Tratar erro de forma a retornar um array vazio
-              tap(() => (this.noResultsFound = false)),
-              tap((data) => (this.noResultsFound = data.length === 0)),
-              tap((data) => this.filteredCharacters$.next(data)),
-              switchMap(() => this.filteredCharacters$),
-            );
+    this.fetchCharacters();
+
+    this.searchInput$
+      .pipe(
+        debounceTime(300),
+        distinctUntilChanged(),
+        tap(() => (this.loading = true)),
+        switchMap((searchTerm: string) => {
+          if (searchTerm.trim() === '') {
+            return this.fetchCharacters().pipe(map(() => []));
+          } else {
+            return this.rickAndMortyService
+              .searchCharacterByName(searchTerm)
+              .pipe(
+                catchError(() => {
+                  this.noResultsFound = true;
+                  return of([]);
+                }),
+                tap((data) => {
+                  this.noResultsFound = data.length === 0;
+                  this.filteredCharacters$.next(data);
+                }),
+              );
+          }
+        }),
+        finalize(() => (this.loading = false)),
+      )
+      .subscribe();
+  }
+
+  fetchCharacters(page: number = 1): Observable<void> {
+    this.currentPage = page;
+    return this.rickAndMortyService.getAllCharacters(page).pipe(
+      tap((response) => {
+        if ('results' in response) {
+          if (page === 1) {
+            this.filteredCharacters$.next(response.results);
+          } else {
+            const currentCharacters = this.filteredCharacters$.getValue();
+            this.filteredCharacters$.next([
+              ...currentCharacters,
+              ...response.results,
+            ]);
+          }
         }
       }),
-      finalize(() => (this.loading = false)),
-    );
+      catchError(() => {
+        return EMPTY;
+      }),
+      map(() => undefined), 
   }
 
   onSearch(searchTerm: string): void {
@@ -87,10 +117,8 @@ export class HomeComponent implements OnInit {
       .some((fav) => fav.id === character.id);
   }
 
-  private fetchCharacters(): Observable<Character[]> {
-    return this.rickAndMortyService.getAllCharacters().pipe(
-      tap((results) => this.filteredCharacters$.next(results)),
-      catchError(() => of([])), // Tratar erro de forma a retornar um array vazio
-    );
+  loadMore(): void {
+    const nextPage = this.currentPage + 1;
+    this.fetchCharacters(nextPage).subscribe();
   }
 }
