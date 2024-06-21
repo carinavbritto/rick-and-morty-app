@@ -96,7 +96,8 @@ export class HomeComponent implements OnInit {
       catchError(() => {
         return EMPTY;
       }),
-      map(() => undefined), 
+      map(() => undefined),
+    );
   }
 
   onSearch(searchTerm: string): void {
