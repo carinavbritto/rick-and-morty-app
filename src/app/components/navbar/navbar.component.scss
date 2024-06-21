@@ -1,7 +1,5 @@
 .navbar-component {
 
-
-
   .desktop,
   .mobile {
     display: flex;
@@ -17,7 +15,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 0.125rem solid var(--border-color);
+    border: 0.0625rem solid var(--border-color);
     background-color: var(--button-background-secondary-color);
     color: var(--button-text-secondary-color);
     padding: 0 1rem;
@@ -130,10 +128,6 @@
       width: 100%;
       border-radius: 0.5rem;
       padding: 0 0.3125rem;
-
-      &:nth-child(2) {
-        border-left: 0.125rem solid var(--button-border-secondary-color);
-      }
     }
   }
 }

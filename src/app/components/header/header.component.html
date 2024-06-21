@@ -13,12 +13,22 @@
       alt="Logo Rick e Morty"
     />
   </a>
-  <app-navbar />
-  <button
-    (click)="toggleTheme()"
-    aria-label="Botão que seleciona tema de cores"
-    class="toggle-theme"
-  >
-    Toggle Theme
-  </button>
+  <div class="navbar-area">
+    <app-navbar />
+    <div class="toggle-theme">
+      <input
+        type="checkbox"
+        id="checkbox"
+        class="checkbox"
+        aria-label="Trocar entre tema claro e escuro"
+        aria-checked="false"
+        (click)="toggleTheme()"
+      />
+      <label for="checkbox" class="label" aria-hidden="true">
+        <fa-icon [icon]="faSun" class="fa-sun" aria-hidden="true"></fa-icon>
+        <fa-icon [icon]="faMoon" class="fa-moon" aria-hidden="true"></fa-icon>
+        <div class="ball"></div>
+      </label>
+    </div>
+  </div>
 </header>

@@ -3,11 +3,23 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ThemeService } from '../../service/theme.service';
+import { MoonIconComponent } from '../moon-icon/moon-icon.component';
+import { SunIconComponent } from '../sun-icon/sun-icon.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NavbarComponent, RouterLink, RouterLinkActive, CommonModule],
+  imports: [
+    NavbarComponent,
+    RouterLink,
+    RouterLinkActive,
+    CommonModule,
+    MoonIconComponent,
+    SunIconComponent,
+    FontAwesomeModule,
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -17,4 +29,7 @@ export class HeaderComponent {
   toggleTheme() {
     this.themeService.toggleTheme();
   }
+
+  faSun = faSun;
+  faMoon = faMoon;
 }
