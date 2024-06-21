@@ -24,7 +24,7 @@
           "
         >
           <ng-container *ngIf="isFavoritesPage">
-            <app-bin-icon fill="#000000"></app-bin-icon>
+            <app-bin-icon></app-bin-icon>
           </ng-container>
           <ng-container *ngIf="!isFavoritesPage">
             <app-heart-outline-icon
@@ -36,7 +36,6 @@
               *ngIf="isFavorite(character)"
               width="30"
               height="30"
-              fill="#000000"
             ></app-heart-icon>
           </ng-container>
         </button>

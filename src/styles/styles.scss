@@ -70,6 +70,34 @@ h6 {
     0.125rem 0.125rem 0 var(--text-shadow-color);
 }
 
+.heart-icon {
+  path {
+    fill: var(--button-text-secondary-color);
+  }
+}
+
+.active {
+  .heart-icon {
+    path {
+      fill: var(--button-text-primary-color);
+    }
+  }
+}
+
+.home-icon {
+  path {
+    fill: var(--button-text-secondary-color);
+  }
+}
+
+.active {
+  .home-icon {
+    path {
+      fill: var(--button-text-primary-color);
+    }
+  }
+}
+
 .dark-theme {
   --background-color: var(--dark-background-color);
   --text-color: var(--dark-text-color);
