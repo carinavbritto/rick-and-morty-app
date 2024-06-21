@@ -9,20 +9,31 @@ body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 p {
   margin: 0;
   font-weight: 400;
+  color: var(--text-color);
 }
 
 a {
   font-weight: 400;
   text-decoration: none;
+  color: var(--link-color);
 }
 
 input {
   font-family: var(--font-family-sans);
+  background-color: var(--input-background-color);
+  border: 1px solid var(--input-border-color);
+  color: var(--input-text-color);
+
+  &::placeholder {
+    color: var(--input-placeholder-color);
+  }
 }
 
 h1,
@@ -32,6 +43,7 @@ h4,
 h5,
 h6 {
   margin: 0;
+  color: var(--title-color-primary);
 }
 
 .title {
@@ -46,14 +58,56 @@ h6 {
 
 .title-system {
   font-family: var(--font-family-system);
-  color: var(--gray-100);
+  color: var(--title-color-secondary);
 }
 
 .title-system-green {
   font-family: var(--font-family-system);
-  color: var(--green-200);
-  text-shadow: (-0.125rem) (-0.125rem) 0 var(--green-100),
-    0.125rem (-0.125rem) 0 var(--green-100),
-    (-0.125rem) 0.125rem 0 var(--green-100),
-    0.125rem 0.125rem 0 var(--green-100)
+  color: var(--title-color-primary);
+  text-shadow: -0.125rem -0.125rem 0 var(--text-shadow-color),
+    0.125rem -0.125rem 0 var(--text-shadow-color),
+    -0.125rem 0.125rem 0 var(--text-shadow-color),
+    0.125rem 0.125rem 0 var(--text-shadow-color);
+}
+
+.dark-theme {
+  --background-color: var(--dark-background-color);
+  --text-color: var(--dark-text-color);
+  --title-color-primary: var(--dark-title-color-primary);
+  --title-color-secondary: var(--dark-title-color-secondary);
+  --text-shadow-color: var(--dark-text-shadow-color);
+  --border-color: var(--dark-border-color);
+  --input-background-color: var(--dark-input-background-color);
+  --input-border-color: var(--dark-input-border-color);
+  --input-placeholder-color: var(--dark-input-placeholder-color);
+  --input-text-color: var(--dark-input-text-color);
+  --button-background-primary-color: var(--dark-button-background-primary-color);
+  --button-border-primary-color: var(--dark-button-border-primary-color);
+  --button-text-primary-color: var(--dark-button-text-primary-color);
+  --button-background-secondary-color: var(--dark-button-background-secondary-color);
+  --button-border-secondary-color: var(--dark-button-border-secondary-color);
+  --button-text-secondary-color: var(--dark-button-text-secondary-color);
+  --card-background-color: var(--dark-card-background-color);
+  --header-background-color: var(--dark-header-background-color);
+}
+
+.light-theme {
+  --background-color: var(--light-background-color);
+  --text-color: var(--light-text-color);
+  --title-color-primary: var(--light-title-color-primary);
+  --title-color-secondary: var(--light-title-color-secondary);
+  --text-shadow-color: var(--light-text-shadow-color);
+  --border-color: var(--light-border-color);
+  --input-background-color: var(--light-input-background-color);
+  --input-border-color: var(--light-input-border-color);
+  --input-placeholder-color: var(--light-input-placeholder-color);
+  --input-text-color: var(--light-input-text-color);
+  --button-background-primary-color: var(--light-button-background-primary-color);
+  --button-border-primary-color: var(--light-button-border-primary-color);
+  --button-text-primary-color: var(--light-button-text-primary-color);
+  --button-background-secondary-color: var(--light-button-background-secondary-color);
+  --button-border-secondary-color: var(--light-button-border-secondary-color);
+  --button-text-secondary-color: var(--light-button-text-secondary-color);
+  --card-background-color: var(--light-card-background-color);
+  --header-background-color: var(--light-header-background-color);
 }

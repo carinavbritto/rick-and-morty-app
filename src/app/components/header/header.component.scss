@@ -1,9 +1,19 @@
 .header-component {
-  background-color: var(--black-400);
+  background-color: var(--header-background-color);
+  border-bottom: var(--border-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+
+  .toggle-theme {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--title-color-secondary);
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
 
   @media (max-width: 767px) {
     padding: 1rem 2rem;

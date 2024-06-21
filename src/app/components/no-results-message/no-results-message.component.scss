@@ -1,6 +1,6 @@
 .no-results-message {
-  background-color: var(--black-400);
-  border: 0.0625rem solid var(--black-200);
+  background-color: var(--card-background-color);
+  border: 0.0625rem solid var(--border-color);
   border-radius: 1.25rem;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@
     font-size: 1.5rem; // 24px
     line-height: 1.5rem;
     font-weight: 700;
-    color: var(--gray-100);
+    color: var(--title-color-secondary);
     margin-bottom: 0;
   }
 
@@ -22,15 +22,15 @@
     font-size: 1.125rem; // 18px
     line-height: 1.125rem;
     font-weight: 400;
-    color: var(--gray-400);
+    color: var(--text-color);
   }
 
   .link {
     font-size: 0.875rem; // 14px
     font-weight: 600;
     line-height: 0.875rem;
-    color: var(--black-400);
-    background-color: var(--white);
+    color: var(--button-text-primary-color);
+    background-color: var(--button-background-primary-color);
     border-radius: 0.9375rem;
     padding: 0.625rem 1.5625rem;
 

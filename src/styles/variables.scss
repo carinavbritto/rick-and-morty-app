@@ -2,18 +2,45 @@
 
 :root {
   // Cores
-  --gray-100: #FAFAFA;
-  --gray-200: #F2F2F2;
-  --gray-300: #CACACA;
-  --gray-400: #A4A4A4;
-  --black-100: #5D5D5D;
-  --black-200: #3D3D3D;
-  --black-300: #1F1F1F;
-  --black-400: #0A0A0A;
-  --white: #FFFFFF;
-  --blue: #00B5CC;
-  --green-100: #B2DF28;
-  --green-200: #56C596;
+  /* Dark Theme */
+  --dark-background-color: #1F1F1F;
+  --dark-text-color: #A4A4A4;
+  --dark-title-color-primary: #00B5CC;
+  --dark-title-color-secondary: #FAFAFA;
+  --dark-text-shadow-color: #B2DF28;
+  --dark-border-color: #3D3D3D;
+  --dark-input-background-color: #1F1F1F;
+  --dark-input-border-color: #5D5D5D;
+  --dark-input-placeholder-color: #CACACA;
+  --dark-input-text-color: #F2F2F2;
+  --dark-button-background-primary-color: #FFFFFF;
+  --dark-button-border-primary-color: #3D3D3D;
+  --dark-button-text-primary-color: #0A0A0A;
+  --dark-button-background-secondary-color: #0A0A0A;
+  --dark-button-border-secondary-color: #3D3D3D;
+  --dark-button-text-secondary-color: #A4A4A4;
+  --dark-card-background-color: #0A0A0A;
+  --dark-header-background-color: #0A0A0A;
+
+  /* Light Theme */
+  --light-background-color: #FAFAFA;
+  --light-text-color: #1F1F1F;
+  --light-title-color-primary: #00B5CC;
+  --light-title-color-secondary: #B2DF28;
+  --light-text-shadow-color: #B2DF28;
+  --light-border-color: #CACACA;
+  --light-input-background-color: #FAFAFA;
+  --light-input-border-color: #CACACA;
+  --light-input-placeholder-color: #A4A4A4;
+  --light-input-text-color: #3D3D3D;
+  --light-button-background-primary-color: #00B5CC;
+  --light-button-border-primary-color: #3D3D3D;
+  --light-button-text-primary-color: #FFFFFF;
+  --light-button-background-secondary-color: #FAFAFA;
+  --light-button-border-secondary-color: #3D3D3D;
+  --light-button-text-secondary-color: #1F1F1F;
+  --light-card-background-color: #FFFFFF;
+  --light-header-background-color: #FFFFFF;
 
   // Tipografia
   --font-family-sans: "Poppins", sans-serif;

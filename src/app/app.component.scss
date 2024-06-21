@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  background-color: var(--black-300);
+  background-color: var(--background-color);
 
   @media (min-width: 768px) and (max-width: 1023px) {
     padding: 3.75rem 10rem;
