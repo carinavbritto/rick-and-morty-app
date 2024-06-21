@@ -113,9 +113,7 @@ export class HomeComponent implements OnInit {
   }
 
   isFavorite(character: Character): boolean {
-    return this.favoriteService
-      .getFavorites()
-      .some((fav) => fav.id === character.id);
+    return this.favoriteService.isFavorite(character);
   }
 
   loadMore(): void {

@@ -13,6 +13,8 @@ import { CommonModule } from '@angular/common';
 import { HeartOutlineIconComponent } from '../heart-outline-icon/heart-outline-icon.component';
 import { HeartIconComponent } from '../heart-icon/heart-icon.component';
 import { BinIconComponent } from '../bin-icon/bin-icon.component';
+import { FavoriteService } from '../../service/favorite.service';
+
 @Component({
   selector: 'app-card',
   standalone: true,
@@ -42,20 +44,14 @@ export class CardComponent {
   private intersectionObserver?: IntersectionObserver;
   private destroy$ = new Subject<void>();
 
-  favorites: Set<string> = new Set();
+  constructor(private favoriteService: FavoriteService) {}
 
   onToggleFavorite(character: Character) {
-    const characterId = character.id.toString();
-    if (this.isFavorite(character)) {
-      this.favorites.delete(characterId);
-    } else {
-      this.favorites.add(characterId);
-    }
     this.toggleFavorite.emit(character);
   }
 
   isFavorite(character: Character): boolean {
-    return this.favorites.has(character.id.toString());
+    return this.favoriteService.isFavorite(character);
   }
 
   ngAfterViewInit() {
