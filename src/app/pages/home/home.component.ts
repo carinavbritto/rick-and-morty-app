@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
 import { NoResultsMessageComponent } from '../../components/no-results-message/no-results-message.component';
 import { CardComponent } from '../../components/card/card.component';
+import { BackToTopBtnComponent } from '../../components/back-to-top-btn/back-to-top-btn.component';
 
 @Component({
   selector: 'app-home',
@@ -27,6 +28,7 @@ import { CardComponent } from '../../components/card/card.component';
     SearchBarComponent,
     NoResultsMessageComponent,
     CardComponent,
+    BackToTopBtnComponent,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
