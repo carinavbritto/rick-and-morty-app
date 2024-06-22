@@ -1,26 +1,71 @@
-# RickAndMortyApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+# Rick & Morty App
 
-## Development server
+🇺🇸 Project in Angular 18 consuming the API for the characters from the Rick & Morty cartoon.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+🇧🇷 Projeto em Angular 18 consumindo a API dos personagens do desenho Rick & Morty.
 
-## Code scaffolding
+## Demo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![Demo](/public/demo.mp4)
 
-## Build
+## Screenshots
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![Mobile](/public/smartphone.png)
+![Tablet](/public/tablet.png)
+![Desktop](/public/desktop.png)
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Run Locally
 
-## Running end-to-end tests
+#### Clone the project
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+  git clone git@github.com:carinavbritto/rick-and-morty-app.git
+```
+
+#### Go to the project directory
+
+```bash
+  cd rick-and-morty-app
+```
+
+#### Install dependencies
+
+```bash
+  npm install
+```
+
+#### Start a dev server
+
+```bash
+  ng serve
+```
+Navigate to http://localhost:4200/. The application will automatically reload if you change any of the source files.
+
+#### Build
+
+```bash
+  ng build
+```
+The build artifacts will be stored in the `dist/` directory.
+
+#### Running unit tests
+
+```bash
+  ng test
+```
+Unit tests via [Karma](https://karma-runner.github.io).
+## Tech Stack
+
+**Client:** [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+
+**Style:** [Sass](https://sass-lang.com/), [FontAwesome](https://fontawesome.com/)
+
+**Deploy:** [Vercel](https://vercel.com/)
+
+
+
 
 ## Further help
 
