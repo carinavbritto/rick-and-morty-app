@@ -1,4 +1,28 @@
-.favorites-components {
+.favorites-component {
   height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+
+  .btn-delete {
+    display: flex;
+    justify-content: center;
+    gap: 0.625rem;
+    align-self: flex-start;
+    cursor: pointer;
+    font-size: 0.875rem; // 14px
+    font-weight: 600;
+    line-height: 0.875rem;
+    color: var(--button-text-primary-color);
+    background-color: var(--button-background-primary-color);
+    border: 0.0625rem solid var(--button-border-primary-color);
+    border-radius: 0.9375rem;
+    padding: 0.625rem 1.5625rem;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 }

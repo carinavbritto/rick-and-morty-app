@@ -10,13 +10,14 @@
     display: flex;
     justify-content: space-between;
     align-self: flex-end;
-    gap: 25px;
+    gap: 1.5625rem;
   }
 
   .toggle-theme {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 
     .label {
       background-color: var(--input-background-color);
@@ -25,7 +26,7 @@
       position: relative;
       align-items: center;
       justify-content: space-between;
-      gap: 4px;
+      gap: 0.25rem;
       padding: 0.19rem 0.3rem;
       transform: scale(1.5);
       width: 2.2rem;
@@ -69,7 +70,7 @@
     padding: 1rem;
 
     .logo {
-      width: 90px;
+      width: 5.625rem;
       height: auto;
     }
   }

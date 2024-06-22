@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NoResultsMessageComponent } from '../../components/no-results-message/no-results-message.component';
 import { CardComponent } from '../../components/card/card.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-favorites',
@@ -15,6 +17,7 @@ import { CardComponent } from '../../components/card/card.component';
     FormsModule,
     NoResultsMessageComponent,
     CardComponent,
+    FontAwesomeModule,
   ],
   templateUrl: './favorites.component.html',
   styleUrls: ['./favorites.component.scss'],
@@ -35,4 +38,10 @@ export class FavoritesComponent {
   isFavorite(character: Character): boolean {
     return this.favoriteService.isFavorite(character);
   }
+
+  deleteAllFavorites(): void {
+    this.favoriteService.deleteAllFavorites();
+  }
+
+  faTrash = faTrash;
 }

@@ -32,6 +32,11 @@ export class FavoriteService {
     }
   }
 
+  deleteAllFavorites(): void {
+    this.favorites = [];
+    this.saveFavorites();
+  }
+
   getFavoriteCharacters(): Character[] {
     return this.favorites;
   }

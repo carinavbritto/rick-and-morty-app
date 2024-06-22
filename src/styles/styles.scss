@@ -28,7 +28,7 @@ a {
 input {
   font-family: var(--font-family-sans);
   background-color: var(--input-background-color);
-  border: 1px solid var(--input-border-color);
+  border: 0.0625rem solid var(--input-border-color);
   color: var(--input-text-color);
 
   &::placeholder {
