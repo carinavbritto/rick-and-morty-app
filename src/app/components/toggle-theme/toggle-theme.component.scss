@@ -1,0 +1,48 @@
+.toggle-theme-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  .label {
+    background-color: var(--input-background-color);
+    display: flex;
+    border-radius: 0.625rem;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.25rem;
+    padding: 0.19rem 0.3rem;
+    transform: scale(1.5);
+    width: 2.2rem;
+  }
+
+  .checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+
+  .ball {
+    height: 1.6875rem;
+    width: 1.2rem;
+    background-color: #fff;
+    position: absolute;
+    top: 5%;
+    left: 0.125rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+    transition: left .2s linear;
+  }
+
+  .checkbox:checked+.label .ball {
+    border-radius: 0 0.625rem 0.625rem 0;
+    left: 1.45rem;
+  }
+
+  .fa-moon {
+    color: #f1c40f;
+  }
+
+  .fa-sun {
+    color: #f39c12;
+  }
+}
