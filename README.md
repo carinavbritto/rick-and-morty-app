@@ -7,13 +7,13 @@
 
 ## Demo
 
-![Demo](/public/demo.gif)
+![Demo](/public/responsive_demo.gif)
 
 ## Screenshots
 
 ![Mobile](/public/smartphone.png)
 ![Tablet](/public/tablet.png)
-![Desktop](/public/desktop.png)
+![Desktop](/public/desktop_mac.png)
 
 
 ## Run Locally
