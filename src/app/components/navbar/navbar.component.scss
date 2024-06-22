@@ -24,7 +24,6 @@
     gap: 0.4rem;
 
     .label {
-      margin: 0;
       font-size: 0.875rem; // 14px
       font-weight: 600;
       line-height: 0.875rem;
@@ -52,82 +51,68 @@
       background-color: var(--button-background-primary-color);
       color: var(--button-text-primary-color);
 
-      .label {
-        color: var(--button-text-primary-color);
-      }
-
+      .label,
       .counter {
         background-color: var(--button-background-primary-color);
         color: var(--button-text-primary-color);
       }
     }
-  }
 
-  .link:nth-child(1) {
-    border-radius: 0.9375rem 0 0 0.9375rem;
-  }
+    &:nth-child(1) {
+      border-radius: 0.9375rem 0 0 0.9375rem;
+    }
 
-  .link:nth-child(2) {
-    border-left: none;
-    border-radius: 0 0.9375rem 0.9375rem 0;
-  }
+    &:nth-child(2) {
+      border-left: none;
+      border-radius: 0 0.9375rem 0.9375rem 0;
+    }
 
-  @media (min-width: 1024px) and (max-width: 1439px) {
-
-    // Smaller Desktops/Tablets in Landscape
-    .link {
+    @media (min-width: 1024px) and (max-width: 1439px) {
+      // Smaller Desktops/Tablets in Landscape
       padding: 0 1rem;
       height: 2.75rem;
+
+      .label,
+      .counter {
+        font-size: 0.875rem; // 14px
+        line-height: 0.875rem;
+      }
     }
 
-    .label {
-      font-size: 0.875rem; // 14px
-      line-height: 0.875rem;
-    }
-
-    .counter {
-      font-size: 0.875rem; // 14px
-      line-height: 0.875rem;
-      height: 1.25rem;
-      width: 1.25rem;
-    }
-  }
-
-  @media (min-width: 768px) and (max-width: 1023px) {
-
-    // Tablets (Portrait)
-    .link {
+    @media (min-width: 768px) and (max-width: 1023px) {
+      // Tablets (Portrait)
       padding: 0 0.75rem;
       height: 2.5rem;
+
+      .label,
+      .counter {
+        font-size: 0.75rem;
+        line-height: 0.75rem;
+      }
     }
 
-    .label {
-      font-size: 0.75rem;
-      line-height: 0.75rem;
-    }
-
-    .counter {
-      font-size: 0.75rem;
-      line-height: 0.75rem;
-      height: 1rem;
-      width: 1rem;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .desktop {
-      display: none;
-    }
-
-    .mobile {
-      display: flex;
-    }
-
-    // Mobile Phones
-    .link {
+    @media (max-width: 767px) {
       width: 100%;
       border-radius: 0.5rem;
       padding: 0 0.3125rem;
+
+      .label,
+      .counter {
+        font-size: 0.75rem;
+        line-height: 0.75rem;
+      }
+    }
+  }
+
+  .desktop {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .mobile {
+    @media (max-width: 767px) {
+      display: flex;
     }
   }
 }
