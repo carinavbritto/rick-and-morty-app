@@ -7,7 +7,7 @@
 
 ## Demo
 
-![Demo](/public/demo.mp4)
+![Demo](/public/demo.gif)
 
 ## Screenshots
 
@@ -59,6 +59,8 @@ Unit tests via [Karma](https://karma-runner.github.io).
 ## Tech Stack
 
 **Client:** [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+
+**Accessibility:** [Vlibras](https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/vlibras)
 
 **Style:** [Sass](https://sass-lang.com/), [FontAwesome](https://fontawesome.com/)
 
