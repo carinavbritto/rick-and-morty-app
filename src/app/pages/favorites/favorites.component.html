@@ -1,9 +1,16 @@
 <div class="favorites-component">
   <h1 class="title title-system-green">Favoritos</h1>
-  <button class="btn-delete" (click)="deleteAllFavorites()">
-    <fa-icon [icon]="faTrash" class="fa-trash" aria-hidden="true"></fa-icon>
-    Excluir Todos
-  </button>
+
+  <ng-container *ngIf="characters$ | async as characters">
+    <button
+      class="btn-delete"
+      *ngIf="characters.length > 0"
+      (click)="deleteAllFavorites()"
+    >
+      <fa-icon [icon]="faTrash" class="fa-trash" aria-hidden="true"></fa-icon>
+      Excluir Todos
+    </button>
+  </ng-container>
 
   <app-card
     [characters$]="characters$"
