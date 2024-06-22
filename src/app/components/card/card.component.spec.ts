@@ -15,12 +15,13 @@ describe('CardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        CardComponent,
+        CardComponent, // Remova CardComponent daqui, não deve estar nesta lista
         BinIconComponent,
         HeartOutlineIconComponent,
         HeartIconComponent,
         NoResultsMessageComponent,
       ],
+      // Importe ou declare módulos que CardComponent depende aqui
     }).compileComponents();
 
     fixture = TestBed.createComponent(CardComponent);
